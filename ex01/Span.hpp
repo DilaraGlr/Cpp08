@@ -6,6 +6,8 @@
 #include <exception>
 #include <iterator>
 #include <algorithm>
+#include <numeric>
+#include <limits>
 
 class Span
 {

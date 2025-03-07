@@ -5,6 +5,7 @@
 #include <iostream>
 #include <vector>
 
+//exception lancee si l'element n'est pas trouve
 class NotFoundException : public std::exception 
 {
     public:
@@ -14,6 +15,7 @@ class NotFoundException : public std::exception
         }
 };
 
+//fonction qui cherche un element dans un container
 template <typename T>
 typename T::iterator easyfind(T &container, int n)
 {

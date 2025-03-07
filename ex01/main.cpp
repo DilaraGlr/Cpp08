@@ -1,6 +1,8 @@
 #include "Span.hpp"
 #include <iostream>
 #include <vector>
+#include <cstdlib>
+#include <ctime> 
 
 int main()
 {
@@ -28,6 +30,26 @@ int main()
         sp.addNumbers(vec.begin(), vec.end());
         std::cout << "Shortest Span (after adding more numbers): " << sp.shortestSpan() << std::endl;
         std::cout << "Longest Span (after adding more numbers): " << sp.longestSpan() << std::endl;
+    }
+    catch (const std::exception &e)
+    {
+        std::cerr << "Error: " << e.what() << std::endl;
+    }
+
+    std::srand(std::time(0));
+    try
+    {
+        std::cout << "=== Test avec 10 000 nombres aléatoires ===" << std::endl;
+        Span bigSpan(10000);
+
+        for (int i = 0; i < 10000; i++)
+        {
+            bigSpan.addNumber(std::rand()); // Ajout de nombres aléatoires
+        }
+
+        std::cout << "Ajout des 10 000 nombres terminé !" << std::endl;
+        std::cout << "Shortest Span (10000 numbers): " << bigSpan.shortestSpan() << std::endl;
+        std::cout << "Longest Span (10000 numbers): " << bigSpan.longestSpan() << std::endl;
     }
     catch (const std::exception &e)
     {

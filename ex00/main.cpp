@@ -6,11 +6,13 @@ int main()
     for (int i = 0; i < 10; i++)
         v.push_back(i);
 
-    try {
-        std::cout << "Found: " << *easyfind(v, 5) << std::endl;
+    try 
+    {
+        std::cout << "Found: " << *easyfind(v, 2) << std::endl;
         std::cout << "Found: " << *easyfind(v, 10) << std::endl;
     } 
-    catch (std::exception &e) {
+    catch (std::exception &e) 
+    {
         std::cout << e.what() << std::endl;
     }
 
