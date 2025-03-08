@@ -14,11 +14,12 @@ void Span::addNumber(int num)
 template <typename InputIterator>
 void Span::addNumbers(InputIterator begin, InputIterator end)
 {
-    size_t count = std::distance(begin, end);
-    if (_numbers.size() + count > _N)
+    size_t count = std::distance(begin, end); // Calcul du nombre d'éléments dans la plage
+    if (_numbers.size() + count > _N) // Vérifie si on dépasse la capacité du Span
         throw SpanFullException();
-    _numbers.insert(_numbers.end(), begin, end);
+    _numbers.insert(_numbers.end(), begin, end); // Insère les éléments dans le Span
 }
+
 
 // Calculer le plus petit span
 int Span::shortestSpan()
